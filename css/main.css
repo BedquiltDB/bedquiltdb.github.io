@@ -11,3 +11,7 @@ body {
   margin-top: 2px;
   font-size: 2.4em;
 }
+
+.section {
+  padding-bottom: 24px;
+}
