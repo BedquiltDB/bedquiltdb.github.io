@@ -1,0 +1,13 @@
+body {
+  font-size: 1.8em;
+}
+
+#logo {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#logo h1 {
+  margin-top: 2px;
+  font-size: 4em;
+}
