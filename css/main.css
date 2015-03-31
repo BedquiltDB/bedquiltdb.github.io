@@ -15,3 +15,8 @@ body {
 .section {
   padding-bottom: 24px;
 }
+
+
+#footer span {
+  margin-left: 12px;
+}

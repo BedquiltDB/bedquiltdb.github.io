@@ -69,10 +69,9 @@
           <div class="row section" id="section-why">
             <div class="col-xs-12">
               <h2>Examples</h2>
-            <div>
-              <pre>
-    # Python
-
+              <div>
+                <h3>Python</h3>
+                <pre>
     bq = pybedquilt.BedquiltClient()
     projects = bq['test']['projects']
 
@@ -86,6 +85,20 @@
     early_projects = projects.find({'quality': 'pre-alpha'})
     api_projects = projects.find({'tags': ['api']})
     the_bedquilt_project = projects.find_one_by_id('BedquiltDB')
+                </pre>
+              </div>
+              <div>
+                <h3>Clojure</h3>
+                <pre>
+(require '[bedquilt.core :as bq])
+
+(def db (bq/get-db {:db-host "localhost"
+                    :db-name "bedquilt_test"
+                    :user "some_user"
+                    :password "password"}))
+
+(bq/save! db :people {:name "John Doe", :age 54})
+(bq/find-one-by-id db :people "sarah.jones@example.com")
                 </pre>
               </div>
             </div>
@@ -103,6 +116,7 @@
                     <li>Automatically create collections on first write</li>
                     <li>Insert and Save data to a collection</li>
                     <li>Find data documents from collectins</li>
+                    <li>Remove data from collections</li>
                   </ul>
                 </p>
                 <br />
@@ -163,16 +177,27 @@
             </div>
           </div>
 
-          <!-- Contact -->
+          <!-- Links -->
           <div class="row section" id="section-projects">
             <div class="col-xs-12">
-              <hr />
               <h2>Links</h2>
               <p>
                 Github: <a href="http://github.com/BedquiltDB">BedquiltDB Organisation</a>
               </p>
             </div>
           </div>
+
+
+          <!-- Footer -->
+          <div class="row section" id="section-projects">
+            <div class="col-xs-12">
+              <hr />
+              <div id="footer" class="pull-right">
+                <span><a href="http://00null.net">00null.net</span>
+              </div>
+            </div>
+          </div>
+
 
         </div>
       </div>
