@@ -32,29 +32,64 @@
             </div>
           </div>
 
+          <div class="row section" id="example">
+          </div>
+
           <!-- What -->
-          <!--
           <div class="row section" id="section-what">
             <div class="col-xs-12">
               <h2>What?</h2>
               <div>
-                Todo
+                BedquiltDB is a PostgreSQL extension and set of code libraries, which wraps the PostgreSQL jsonb data
+                type in a slick programatic API inspired by NoSQL data stores.
               </div>
             </div>
           </div>
-          -->
 
           <!-- Why -->
-          <!--
           <div class="row section" id="section-why">
             <div class="col-xs-12">
               <h2>Why?</h2>
               <div>
-                Todo
+                <p>
+                  Many developers prefer the code-centric APIs of NoSQL stores like MongoDB, especially in the early
+                  stages of a project, but would like to still have all the power of an SQL database available without
+                  going through a painful migration.
+                </p>
+                <p>
+                  BedquiltDB aims to provide developers with a powerful tool, both in early stages of a project,
+                  and when explicitly dealing with loosely-structured data,
+                  while providing an easy migration path into SQL-land once the schemas fall into place.
+                </p>
               </div>
             </div>
           </div>
-          -->
+
+          <!-- Examples -->
+          <div class="row section" id="section-why">
+            <div class="col-xs-12">
+              <h2>Examples</h2>
+            <div>
+              <pre>
+    # Python
+
+    bq = pybedquilt.BedquiltClient()
+    projects = bq['test']['projects']
+
+    projects.insert({
+        '_id':   "BedquiltDB",
+        'description': "A ghastly hack.",
+        'quality': "pre-alpha",
+        'tags': ["json", "postgres", "api"]
+    })
+
+    early_projects = projects.find({'quality': 'pre-alpha'})
+    api_projects = projects.find({'tags': ['api']})
+    the_bedquilt_project = projects.find_one_by_id('BedquiltDB')
+                </pre>
+              </div>
+            </div>
+          </div>
 
           <!-- Projects -->
           <div class="row section" id="section-projects">
