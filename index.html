@@ -74,19 +74,19 @@
               <div>
                 <h3>Python</h3>
                 <pre>
-    bq = pybedquilt.BedquiltClient()
-    projects = bq['test']['projects']
+bq = pybedquilt.BedquiltClient()
+projects = bq['test']['projects']
 
-    projects.insert({
-        '_id':   "BedquiltDB",
-        'description': "A ghastly hack.",
-        'quality': "pre-alpha",
-        'tags': ["json", "postgres", "api"]
-    })
+projects.insert({
+    '_id':   "BedquiltDB",
+    'description': "A ghastly hack.",
+    'quality': "pre-alpha",
+    'tags': ["json", "postgres", "api"]
+})
 
-    early_projects = projects.find({'quality': 'pre-alpha'})
-    api_projects = projects.find({'tags': ['api']})
-    the_bedquilt_project = projects.find_one_by_id('BedquiltDB')
+early_projects = projects.find({'quality': 'pre-alpha'})
+api_projects = projects.find({'tags': ['api']})
+the_bedquilt_project = projects.find_one_by_id('BedquiltDB')
                 </pre>
               </div>
               <div>
