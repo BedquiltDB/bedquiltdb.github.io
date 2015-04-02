@@ -84,9 +84,13 @@ projects.insert({
     'tags': ["json", "postgres", "api"]
 })
 
-early_projects = projects.find({'quality': 'pre-alpha'})
-api_projects = projects.find({'tags': ['api']})
-the_bedquilt_project = projects.find_one_by_id('BedquiltDB')
+early_projects = projects.find(
+    {'quality': 'pre-alpha'})
+
+api_projects = projects.find(
+    {'tags': ['api']})
+
+cool_project = projects.find_one_by_id('BedquiltDB')
                 </pre>
               </div>
               <div>
@@ -94,13 +98,18 @@ the_bedquilt_project = projects.find_one_by_id('BedquiltDB')
                 <pre>
 (require '[bedquilt.core :as bq])
 
-(def db (bq/get-db {:db-host "localhost"
-                    :db-name "bedquilt_test"
-                    :user "some_user"
-                    :password "password"}))
+(def db
+  (bq/get-db
+    {:db-host "localhost"
+    :db-name "bedquilt_test"
+    :user "some_user"
+    :password "password"}))
 
-(bq/save! db :people {:name "John Doe", :age 54})
-(bq/find-one-by-id db :people "sarah.jones@example.com")
+(bq/save! db :people
+  {:name "John Doe", :age 54})
+
+(bq/find-one-by-id db :people
+  "sarah.jones@example.com")
                 </pre>
               </div>
             </div>
