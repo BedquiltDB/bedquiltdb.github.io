@@ -71,6 +71,7 @@
           <div class="row section" id="section-why">
             <div class="col-xs-12">
               <h2>Examples</h2>
+
               <div>
                 <h3>Python</h3>
                 <pre>
@@ -93,6 +94,7 @@ api_projects = projects.find(
 cool_project = projects.find_one_by_id('BedquiltDB')
                 </pre>
               </div>
+
               <div>
                 <h3>Clojure</h3>
                 <pre>
@@ -110,6 +112,29 @@ cool_project = projects.find_one_by_id('BedquiltDB')
 
 (bq/find-one-by-id db :people
   "sarah.jones@example.com")
+                </pre>
+              </div>
+
+              <div>
+                <h2>SQL</h2>
+                <pre>
+select bq_insert(
+  'orders',
+  '{"_id": "2001515",
+    "customerId": "117176",
+    "items": ["orange_coat", "socks", "plastic_teeth"]}'
+);
+
+select bq_find(
+  'orders',
+  '{"customerId": "220011",
+    "items": ["socks"]}'
+);
+
+select bq_remove_one(
+  'orders',
+  '{"_id": "4401515"}'
+);
                 </pre>
               </div>
             </div>
