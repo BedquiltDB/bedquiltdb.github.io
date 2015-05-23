@@ -128,34 +128,14 @@ cool_project = projects.find_one_by_id('BedquiltDB')
               <div>
                 <h3>Node.js</h3>
                 <pre>
-var BedquiltClient = require('node-bedquilt').BedquiltClient;
+var BedquiltClient = require('bedquilt').BedquiltClient;
 
-BedquiltClient.connect('localhost', function(err, db) {
-  var tools = db.collection('tools');
+BedquiltClient.connect('localhost', function(err, client) {
+  var tools = client.collection('tools');
   tools.find({type: 'blunt'}, function(err, results) {
     console.log(results);
   });
 });
-                </pre>
-              </div>
-
-              <div>
-                <h3>Clojure</h3>
-                <pre>
-(require '[bedquilt.core :as bq])
-
-(def db
-  (bq/get-db
-    {:db-host "localhost"
-    :db-name "bedquilt_test"
-    :user "some_user"
-    :password "password"}))
-
-(bq/save! db :people
-  {:name "John Doe", :age 54})
-
-(bq/find-one-by-id db :people
-  "sarah.jones@example.com")
                 </pre>
               </div>
 
@@ -259,6 +239,7 @@ select bq_remove_one(
                 </li>
                 <li>
                   <a href="http://github.com/BedquiltDB/node-bedquilt">node-bedquilt</a> - The official Node.js driver for BedquiltDB.
+                  (<a href="http://node-bedquilt.readthedocs.org/en/latest">docs</a>)
                 </li>
               </ul>
             </div>
