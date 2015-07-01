@@ -108,6 +108,14 @@
 bq = pybedquilt.BedquiltClient()
 projects = bq['test']['projects']
 
+projects.add_constraints({
+    'description': {'$required': 1,
+                    '$notnull': 1,
+                    '$type': 'string'},
+    'tags': {'$required': 1,
+             '$type': 'array'}
+})
+
 projects.insert({
     '_id':   "BedquiltDB",
     'description': "A ghastly hack.",
@@ -176,6 +184,7 @@ select bq_remove_one(
                     <li>Automatically create collections on first write</li>
                     <li>Insert and Save data to a collection</li>
                     <li>Automatic generation of id fields for inserted documents</li>
+                    <li>Add schema constraints to collections</li>
                     <li>Find data documents from collections</li>
                     <li>Remove data from collections</li>
                   </ul>
@@ -185,6 +194,7 @@ select bq_remove_one(
                   Client (Driver) Libraries:
                   <ul>
                     <li>Python (alpha)</li>
+                    <li>Node.js (alpha)</li>
                   </ul>
                 </p>
               </div>
@@ -199,11 +209,10 @@ select bq_remove_one(
                 <p>
                   Planned Features:
                   <ul>
-                    <li>Add constraints to collections</li>
                     <li>Add indexes to collection fields</li>
-                    <li>Transactions</li>
                     <li>Advanced query operations</li>
                     <li>Update, with partial modification of documents</li>
+                    <li>Client control of Transactions</li>
                     <li>Collection namespaces</li>
                   </ul>
                 </p>
