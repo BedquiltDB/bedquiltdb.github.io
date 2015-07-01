@@ -105,8 +105,9 @@
               <div>
                 <h3>Python</h3>
                 <pre>
-bq = pybedquilt.BedquiltClient()
-projects = bq['test']['projects']
+import pybedquilt
+bq = pybedquilt.BedquiltClient(dbname='bedquilt_test')
+projects = bq['projects']
 
 projects.add_constraints({
     'description': {'$required': 1,
