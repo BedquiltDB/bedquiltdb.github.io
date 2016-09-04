@@ -172,12 +172,13 @@ cool_project = projects.find_one_by_id('BedquiltDB')
          <div>
 
             <h4>NodeJS</h4>
-            <pre><code class="javascript">var BedquiltClient = require('bedquilt').BedquiltClient;
+            <pre><code class="javascript">let bq = require('bedquilt')
+let BedquiltClient = bq.BedquiltClient;
 
-BedquiltClient.connect('localhost', function(err, client) {
-  var tools = client.collection('tools');
+BedquiltClient.connect('localhost', (err, client) => {
+  let tools = client.collection('tools');
 
-  tools.find({type: 'blunt'}, function(err, results) {
+  tools.find({type: 'blunt'}, (err, results) => {
     console.log(results);
   });
 
@@ -188,7 +189,9 @@ BedquiltClient.connect('localhost', function(err, client) {
   'orders',
   '{"_id": "2001515",
     "customerId": "117176",
-    "items": ["orange_coat", "socks", "plastic_teeth"]}'
+    "items": ["orange_coat",
+              "socks",
+              "plastic_teeth"]}'
 );
 
 select bq_find(
