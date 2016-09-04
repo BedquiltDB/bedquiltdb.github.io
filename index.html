@@ -4,121 +4,142 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
     <title>BedquiltDB</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="assets/js/modernizr.js"></script>
   </head>
+
   <body>
-    <div class="container-fluid" id="main-content">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
 
-          <!-- Heading -->
-          <div class="row" id="logo">
-            <div class="col-xs-12 text-center">
-              <img height="120" src="images/bedquilt_logo_tile.png">
-              <h1>BedquiltDB</h1>
-              <div>A Json document store on PostgreSQL</div>
-              <br />
-              <code>CREATE EXTENSION bedquilt;</code>
-            </div>
-          </div>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">BedquiltDB</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="https://bedquiltdb.readthedocs.io/en/latest/guide" target="_blank">GUIDE</a></li>
+            <li class=""><a href="https://bedquiltdb.readthedocs.io" target="_blank">DOCUMENTATION</a></li>
+            <!-- <li><a href="about.html">ABOUT</a></li> -->
+            <li><a href="http://pgxn.org/dist/bedquilt" target="_blank">PGXN</a></li>
+            <li><a href="https://github.com/BedquiltDB" target="_blank">SOURCE CODE</a></li>
+            <!-- <li class="dropdown"> -->
+            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES <b class="caret"></b></a> -->
+            <!-- <ul class="dropdown-menu"> -->
+            <!-- <li><a href="blog.html">BLOG</a></li> -->
+            <!-- <li><a href="single-post.html">SINGLE POST</a></li> -->
+            <!-- <li><a href="portfolio.html">PORTFOLIO</a></li> -->
+            <!-- <li><a href="single-project.html">SINGLE PROJECT</a></li> -->
+            <!-- </ul> -->
+            <!-- </li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
-          <div class="row section text-center" id="quick-links">
-            <a href="http://bedquiltdb.readthedocs.org">Documentation</a> |
-            <a href="#section-getting-started">Getting Started</a> |
-            <a href="#section-examples">Examples</a> |
-            <a href="#section-help">Help</a> |
-            <a href="http://github.com/BedquiltDB" target="_blank">Github</a>
-          </div>
+	<!-- *****************************************************************************************************************
+	 HEADERWRAP
+	 ***************************************************************************************************************** -->
+	<div id="headerwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 himg">
+					<img src="assets/img/bedquilt_logo_tile.png" class="img-responsive" style="width:200px;">
+				</div>
+				<div class="col-lg-8 col-lg-offset-2">
+					<h3><code>CREATE EXTENSION bedquilt;</code></h3>
+					<h1>A JSON doc-store built on PostgreSQL</h1>
+					<h5>BedquiltDB builds upon the rock-solid foundation of PostgreSQL</h5>
+          <h5> to provide a simple, developer-friendly NoSQL API.</h5>
+          <br/>
+				</div>
+				<div class="col-lg-8 col-lg-offset-2 himg">
+					<img src="assets/img/bq_example.gif" class="img-responsive">
+				</div>
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /headerwrap -->
 
-          <div class="row text-center">
-            <div class="col-xs-12">
-              <img style="width: 360px;" src="/images/pybedquilt_example.gif">
-            </div>
-          </div>
+	<!-- *****************************************************************************************************************
+	 SERVICE LOGOS
+	 ***************************************************************************************************************** -->
+	 <div id="service">
+	 	<div class="container">
+ 			<div class="row centered">
+
+ 				<div class="col-md-4">
+ 					<i class="fa fa-database"></i>
+ 					<h4>The Best of Both Worlds</h4>
+ 					<p>BedquiltDB presents a simple NoSQL API to the developer, while persisting data to PostgreSQL. Enjoy straight-forward JSON persistence and querying, combined with the strengths of a relational database, such as field constraints and multi-document, multi-collection transactions</p>
+ 					<!-- <p><br/><a href="#" class="btn btn-theme">More Info</a></p> -->
+ 				</div>
+
+        <div class="col-md-4">
+ 					<i class="fa fa-code"></i>
+ 					<h4>Lots of Client Libraries</h4>
+ 					<p>BedquiltDB is implemented as a PostgreSQL extension, making it easy to create client libraries/drivers. Official drivers for Python, NodeJS and Clojure are already available.</p>
+ 					<!-- <p><br/><a href="#" class="btn btn-theme">More Info</a></p> -->
+ 				</div>
+
+        <div class="col-md-4">
+ 					<i class="fa fa-code-fork"></i>
+ 					<h4>Open Source</h4>
+ 					<p>BedquiltDB is open-source, under the BSD License. Contributions are, of course, more than welcome. Check out our code on <a href="https://github.com/BedquiltDB" target="_blank">Github</a>!</p>
+ 					<!-- <p><br/><a href="#" class="btn btn-theme">More Info</a></p> -->
+ 				</div>
+
+	 		</div>
+	 	</div><! --/container -->
+	 </div><! --/service -->
 
 
-          <!-- What -->
-          <div class="row section" id="section-what">
-            <div class="col-xs-12">
-              <h2>What?</h2>
-              <div>
-                BedquiltDB is an open-source PostgreSQL extension and set of code libraries,
-                which wraps the PostgreSQL jsonb data type in a slick programmatic API inspired by NoSQL document stores.
-              </div>
-            </div>
-          </div>
+	<!-- *****************************************************************************************************************
+	 MIDDLE CONTENT
+	 ***************************************************************************************************************** -->
 
-          <!-- Why -->
-          <div class="row section" id="section-why">
-            <div class="col-xs-12">
-              <h2>Why?</h2>
-              <div>
-                <p>
-                  Many developers prefer the code-centric APIs of NoSQL stores like MongoDB, especially in the early
-                  stages of a project, but would like to still have all the power of an SQL database available without
-                  going through a painful migration.
-                </p>
-                <p>
-                  BedquiltDB aims to provide developers with a powerful tool, both in early stages of a project,
-                  and when explicitly dealing with loosely-structured data,
-                  while providing an easy migration path into SQL-land once the schemas fall into place.
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <!-- Advantages -->
-          <div class="row section" id="section-advantages">
-            <div class="col-xs-12">
-              <h2>Advantages</h2>
-              <div>
-                <p>
-                  <ul>
-                    <li>Simple, developer-friendly programmatic API</li>
-                    <li>Easy to write clients in any programming language, as all the "smarts" are in the PostgreSQL extension</li>
-                    <li>All the power of a SQL database, including Constraints and Transactions</li>
-                    <li>Easy migration path from "loose schema" to "well defined schema" without needing to change database platform</li>
-                    <li>If there's something you want that BedquiltDB doesn't support directly, you can just use ordinary SQL, BedquiltDB won't stop you!</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
+   <div class="container mtb">
+     <div class="row">
+       <h2 class="text-center">Examples</h2>
+       <br />
+       <div class="col-lg-6">
+         <div>
+            <h4>Python</h4>
+            <pre><code class="python">from pybedquilt import BedquiltClient
 
-          <!-- Getting Started -->
-          <div class="row section" id="section-getting-started">
-            <div class="col-xs-12">
-              <h2>Getting Started</h2>
-              <div>
-                <p>
-                  See the <a href="http://bedquiltdb.readthedocs.org/en/latest/guide" target="_blank">BedquiltDB User Guide</a>.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Examples -->
-          <div class="row section" id="section-examples">
-            <div class="col-xs-12">
-              <h2>Examples</h2>
-
-              <div>
-                <h3>Python</h3>
-                <pre>
-import pybedquilt
-bq = pybedquilt.BedquiltClient(dbname='bedquilt_test')
+bq = BedquiltClient(dbname='bedquilt_test')
 projects = bq['projects']
 
 projects.add_constraints({
@@ -143,27 +164,27 @@ api_projects = projects.find(
     {'tags': ['api']})
 
 cool_project = projects.find_one_by_id('BedquiltDB')
-                </pre>
+            </code></pre>
               </div>
+       </div>
 
-              <div>
-                <h3>Node.js</h3>
-                <pre>
-var BedquiltClient = require('bedquilt').BedquiltClient;
+       <div class="col-lg-6">
+         <div>
+
+            <h4>NodeJS</h4>
+            <pre><code class="javascript">var BedquiltClient = require('bedquilt').BedquiltClient;
 
 BedquiltClient.connect('localhost', function(err, client) {
   var tools = client.collection('tools');
+
   tools.find({type: 'blunt'}, function(err, results) {
     console.log(results);
   });
-});
-                </pre>
-              </div>
 
-              <div>
-                <h2>SQL</h2>
-                <pre>
-select bq_insert(
+});</code></pre>
+
+                <h4>SQL</h4>
+                <pre><code class="sql">select bq_insert(
   'orders',
   '{"_id": "2001515",
     "customerId": "117176",
@@ -179,143 +200,156 @@ select bq_find(
 select bq_remove_one(
   'orders',
   '{"_id": "4401515"}'
-);
-                </pre>
+);</code></pre>
+
+
               </div>
-            </div>
-          </div>
-
-          <!-- Features -->
-          <div class="row section" id="section-features">
-            <div class="col-xs-12">
-              <h2>Features</h2>
-              <div>
-                <p>
-                  Core features:
-                  <ul>
-                    <li>Easy-to-install PostgreSQL extension</li>
-                    <li>Automatically create collections on first write</li>
-                    <li>Insert and Save data to a collection</li>
-                    <li>Automatic generation of id fields for inserted documents</li>
-                    <li>Optional schema constraints on collections</li>
-                    <li>Find data documents from collections</li>
-                    <li>Remove data from collections</li>
-                  </ul>
-                </p>
-                <br />
-                <p>
-                  Client (Driver) Libraries:
-                  <ul>
-                      <li>Python (<a href="http://pybedquilt.readthedocs.org" target="_blank">docs</a>)</li>
-                      <li>Node.js (<a href="http://node-bedquilt.readthedocs.org" target="_blank">docs</a>)</li>
-                      <li>Clojure (<a href="http://bedquiltdb.github.io/clj-bedquilt-docs/" target="_blank">docs</a>)</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Roadmap -->
-          <div class="row section" id="section-roadmap">
-            <div class="col-xs-12">
-              <h2>Roadmap</h2>
-              <div>
-                <p>
-                  Planned Features:
-                  <ul>
-                    <li>Add indexes to collection fields</li>
-                    <li>Advanced query operations</li>
-                    <li>Update, with partial modification of documents</li>
-                    <li>Client control of Transactions</li>
-                    <li>Collection namespaces</li>
-                  </ul>
-                </p>
-                <br />
-                <p>
-                  Planned Client Libraries:
-                  <ul>
-                    <li>Python</li>
-                    <li>Clojure</li>
-                    <li>Javascript</li>
-                    <li>Elixir</li>
-                    <li>Ruby</li>
-                    <li>Scala</li>
-                    <li>Go</li>
-                    <li>And many more...</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Projects -->
-          <div class="row section" id="section-projects">
-            <div class="col-xs-12">
-              <h2>Projects</h2>
-              <ul>
-                <li>
-                  <a href="http://github.com/BedquiltDB/bedquilt-core">bedquilt-core</a> - The main PostgreSQL extension.
-                  (<a href="http://bedquiltdb.readthedocs.org/en/latest">docs</a>)
-                </li>
-                <li>
-                  <a href="http://github.com/BedquiltDB/pybedquilt">pybedquilt</a> - The official Python driver for BedquiltDB.
-                  (<a href="http://pybedquilt.readthedocs.org/en/latest">docs</a>)
-                </li>
-                <li>
-                  <a href="http://github.com/BedquiltDB/node-bedquilt">node-bedquilt</a> - The official Node.js driver for BedquiltDB.
-                  (<a href="http://node-bedquilt.readthedocs.org/en/latest">docs</a>)
-                </li>
-                <li>
-                  <a href="http://github.com/BedquiltDB/clj-bedquilt">clj-bedquilt</a> - The official Clojure driver for BedquiltDB.
-                  (<a href="http://bedquiltdb.github.io/clj-bedquilt-docs/">docs</a>)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Help -->
-          <div class="row section" id="section-help">
-            <div class="col-xs-12">
-              <h2>Help</h2>
-              <p>
-                If you need help with BedquiltDB, we have an IRC channel #bedquiltdb at irc.freenode.net.
-                Alternatively, you can reach out to me on twitter (<a href="http://twitter.com/shanekilkelly">@shanekilkelly</a>).
-              </p>
-              <p>
-                You can also come chat with us on <a href="https://gitter.im/BedquiltDB/bedquilt-core?utm_source=share-link&utm_medium=link&utm_campaign=share-link">Gitter</a>.
-              </p>
-            </div>
-          </div>
-
-          <!-- Links -->
-          <div class="row section" id="section-links">
-            <div class="col-xs-12">
-              <h2>Links</h2>
-              <p>
-                Github: <a href="http://github.com/BedquiltDB">BedquiltDB Organisation</a>
-              </p>
-            </div>
-          </div>
+       </div>
 
 
-          <!-- Footer -->
-          <div class="row section" id="footer">
-            <div class="col-xs-12">
-              <hr />
-              <div id="footer" class="pull-right">
-                <span><a href="http://00null.net">00null.net</span>
-              </div>
-            </div>
-          </div>
+     </div>
 
+   </div>
+
+
+	 <div class="container mtb">
+	 	<div class="row">
+	 		<div class="col-lg-4 col-lg-offset-1">
+		 		<h4>Roadmap</h4>
+		 		<div>
+          <ul class="extra-indent">
+            <li>Indexes to collection fields</li>
+            <li>Update, with partial modification of documents</li>
+            <li>Client transaction API</li>
+            <li>Collection namespaces</li>
+            <li>And much more!</li>
+          </ul>
 
         </div>
-      </div>
-    </div>
+ 				<!-- <p><br/><a href="about.html" class="btn btn-theme">More Info</a></p> -->
+	 		</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+	 		<div class="col-lg-6">
+	 			<h4>Projects</h4>
+	 			<div class="hline"></div>
+        <p>
+          <a href="http://github.com/BedquiltDB/bedquilt-core">bedquilt-core</a> - The main PostgreSQL extension.
+          (<a href="http://bedquiltdb.readthedocs.org/en/latest">docs</a>)
+        </p>
+        <p>
+          <a href="http://github.com/BedquiltDB/pybedquilt">pybedquilt</a> - The official Python driver for BedquiltDB.
+          (<a href="http://pybedquilt.readthedocs.org/en/latest">docs</a>)
+        </p>
+        <p>
+          <a href="http://github.com/BedquiltDB/node-bedquilt">node-bedquilt</a> - The official Node.js driver for BedquiltDB.
+          (<a href="http://node-bedquilt.readthedocs.org/en/latest">docs</a>)
+        </p>
+        <p>
+          <a href="http://github.com/BedquiltDB/clj-bedquilt">clj-bedquilt</a> - The official Clojure driver for BedquiltDB.
+          (<a href="http://bedquiltdb.github.io/clj-bedquilt-docs/">docs</a>)
+        </p>
+
+	 		</div>
+
+	 	</div><! --/row -->
+	 </div><! --/container -->
+
+	<!-- *****************************************************************************************************************
+	 TESTIMONIALS
+	 ***************************************************************************************************************** -->
+	 <!-- <div id="twrap">
+	 	    <div class="container centered">
+	 		  <div class="row">
+	 			<div class="col-lg-8 col-lg-offset-2">
+	 			<i class="fa fa-comment-o"></i>
+	 			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+	 			<h4><br/>Marcel Newman</h4>
+	 			<p>WEB DESIGNER - BLACKTIE.CO</p>
+	 			</div>
+	 		  </div>
+	 	</div>
+	  </div>-->
+
+
+
+	<!-- *****************************************************************************************************************
+	 OUR CLIENTS
+	 ***************************************************************************************************************** -->
+	 <div id="cwrap">
+		 <div class="container">
+		 	<div class="row centered">
+			 	<h3>Get Started Now</h3>
+			 	<div class="col-lg-4 col-md-4 col-sm-4">
+          <h3>
+            <a href="https://bedquiltdb.readthedocs.io/en/latest/guide/concepts">
+              Read The Documentation
+            </a>
+          </h3>
+			 	</div>
+			 	<div class="col-lg-4 col-md-4 col-sm-4">
+          <h3>
+            <a href="https://bedquiltdb.readthedocs.io/en/latest/guide/installation/">
+              Install The Extension
+            </a>
+          </h3>
+			 	</div>
+			 	<div class="col-lg-4 col-md-4 col-sm-4">
+          <h3>
+            <a href="https://github.com/BedquiltDB/bedquilt-core">
+              Get The Source Code
+            </a>
+          </h3>
+			 	</div>
+		 	</div><! --/row -->
+		 </div><! --/container -->
+	 </div><! --/cwrap -->
+
+	<!-- *****************************************************************************************************************
+	 FOOTER
+	 ***************************************************************************************************************** -->
+	 <div id="footerwrap">
+	 	<div class="container">
+		 	<div class="row">
+		 		<div class="col-lg-6">
+		 			<h4>About</h4>
+		 			<div class="hline-w"></div>
+		 			<p>BedquiltDB is a super-cool open source project.</p>
+		 		</div>
+		 		<div class="col-lg-6">
+		 			<h4>Social Links</h4>
+		 			<div class="hline-w"></div>
+		 			<p>
+		 				<a href="https://github.com/BedquiltDB"><i class="fa fa-github">&nbsp;</i></a>
+		 				<a href="https://twitter.com/bedquiltdb"><i class="fa fa-twitter">&nbsp;</i></a>
+		 			</p>
+		 		</div>
+		 		<!-- <div class="col-lg-4">
+		 			   <h4>Our Bunker</h4>
+		 			   <div class="hline-w"></div>
+		 			   <p>
+		 				 Some Ave, 987,<br/>
+		 				 23890, New York,<br/>
+		 				 United States.<br/>
+		 			   </p>
+		 		     </div>
+           -->
+		 	</div><! --/row -->
+	 	</div><! --/container -->
+	 </div><! --/footerwrap -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/retina-1.1.0.js"></script>
+	<script src="assets/js/jquery.hoverdir.js"></script>
+	<script src="assets/js/jquery.hoverex.min.js"></script>
+	<script src="assets/js/jquery.prettyPhoto.js"></script>
+  	<script src="assets/js/jquery.isotope.min.js"></script>
+  	<script src="assets/js/custom.js"></script>
+
+
+    <script>
   </body>
 </html>
