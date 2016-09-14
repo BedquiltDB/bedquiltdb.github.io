@@ -71,182 +71,151 @@
 					<img src="assets/img/bedquilt_logo_tile_2.png" class="img-responsive" style="width:380px;">
 				</div>
 				<div class="col-lg-8 col-lg-offset-2">
-					<h3><code>CREATE EXTENSION bedquilt;</code></h3>
-					<h1>A JSON doc-store built on PostgreSQL</h1>
-					<h5>BedquiltDB builds upon the rock-solid foundation of PostgreSQL</h5>
-          <h5> to provide a simple, developer-friendly NoSQL API.</h5>
+					<h1>BedquiltDB v2 is now available</h1>
+					<h5>See the <a href="https://bedquiltdb.readthedocs.io/en/latest/guide/updating/" target="_blank">Upgrade Instructions</a> to get up-to-date,</h5>
+          <h5>or <a href="https://bedquiltdb.readthedocs.io/en/latest/guide/" target="_blank">Get Started</a> right now with version 2</h5>
           <br/>
-				</div>
-				<div class="col-lg-8 col-lg-offset-2 himg">
-					<img src="assets/img/bq_example.gif" class="img-responsive">
 				</div>
 			</div><!-- /row -->
 	    </div> <!-- /container -->
 	</div><!-- /headerwrap -->
 
-	<!-- *****************************************************************************************************************
-	 SERVICE LOGOS
-	 ***************************************************************************************************************** -->
-	 <div id="service">
-	 	<div class="container">
- 			<div class="row centered">
-
- 				<div class="col-md-4">
- 					<i class="fa fa-database"></i>
- 					<h4>The Best of Both Worlds</h4>
- 					<p>BedquiltDB presents a simple NoSQL API to the developer, while persisting data to PostgreSQL. Enjoy straight-forward JSON persistence and querying, combined with the strengths of a relational database, such as field constraints and multi-document, multi-collection transactions</p>
- 					<!-- <p><br/><a href="#" class="btn btn-theme">More Info</a></p> -->
- 				</div>
-
-        <div class="col-md-4">
- 					<i class="fa fa-code"></i>
- 					<h4>Lots of Client Libraries</h4>
- 					<p>BedquiltDB is implemented as a PostgreSQL extension, making it easy to create client libraries/drivers. Official drivers for Python, NodeJS and Clojure are already available.</p>
- 					<!-- <p><br/><a href="#" class="btn btn-theme">More Info</a></p> -->
- 				</div>
-
-        <div class="col-md-4">
- 					<i class="fa fa-code-fork"></i>
- 					<h4>Open Source</h4>
- 					<p>BedquiltDB is open-source, under the BSD License. Contributions are, of course, more than welcome. Check out our code on <a href="https://github.com/BedquiltDB" target="_blank">Github</a>!</p>
- 					<!-- <p><br/><a href="#" class="btn btn-theme">More Info</a></p> -->
- 				</div>
-
-	 		</div>
-	 	</div><! --/container -->
-	 </div><! --/service -->
-
-
-	<!-- *****************************************************************************************************************
-	 MIDDLE CONTENT
-	 ***************************************************************************************************************** -->
-
-
-   <div class="container mtb">
-     <div class="row">
-       <h2 class="text-center">Examples</h2>
-       <br />
-       <div class="col-lg-6">
-         <div>
-            <h4>Python</h4>
-            <pre><code class="python">from pybedquilt import BedquiltClient
-
-bq = BedquiltClient(dbname='bedquilt_test')
-projects = bq['projects']
-
-projects.add_constraints({
-    'description': {'$required': 1,
-                    '$notnull': 1,
-                    '$type': 'string'},
-    'tags': {'$required': 1,
-             '$type': 'array'}
-})
-
-projects.insert({
-    '_id':   "BedquiltDB",
-    'description': "A ghastly hack.",
-    'quality': "pre-alpha",
-    'tags': ["json", "postgres", "api"]
-})
-
-early_projects = projects.find(
-    {'quality': 'pre-alpha'})
-
-api_projects = projects.find(
-    {'tags': ['api']})
-
-cool_project = projects.find_one_by_id('BedquiltDB')
-            </code></pre>
-              </div>
-       </div>
-
-       <div class="col-lg-6">
-         <div>
-
-            <h4>NodeJS</h4>
-            <pre><code class="javascript">let bq = require('bedquilt')
-let BedquiltClient = bq.BedquiltClient;
-
-BedquiltClient.connect('localhost', (err, client) => {
-  let tools = client.collection('tools');
-
-  tools.find({type: 'blunt'}, (err, results) => {
-    console.log(results);
-  });
-
-});</code></pre>
-
-                <h4>SQL</h4>
-                <pre><code class="sql">select bq_insert(
-  'orders',
-  '{"_id": "2001515",
-    "customerId": "117176",
-    "items": ["orange_coat",
-              "socks",
-              "plastic_teeth"]}'
-);
-
-select bq_find(
-  'orders',
-  '{"customerId": "220011",
-    "items": ["socks"]}'
-);
-
-select bq_remove_one(
-  'orders',
-  '{"_id": "4401515"}'
-);</code></pre>
-
-
-              </div>
-       </div>
-
-
-     </div>
-
-   </div>
-
 
 	 <div class="container mtb">
+     <div class="row">
+       <div class="col-lg-12 text-center">
+         <h1>New Features</h1>
+       </div>
+     </div>
+     <br />
+     <br />
+
 	 	<div class="row">
-	 		<div class="col-lg-4 col-lg-offset-1">
-		 		<h4>Roadmap</h4>
+	 		<div class="col-lg-5 col-lg-offset-1">
+		 		<h3>Advanced Query Operators</h3>
 		 		<div>
-          <ul class="extra-indent">
-            <li>Indexes to collection fields</li>
-            <li>Update, with partial modification of documents</li>
-            <li>Client transaction API</li>
-            <li>Collection namespaces</li>
-            <li>And much more!</li>
-          </ul>
+          <p>
+            Go beyond simple match queries with these new query operators.
+            <ul class="extra-indent">
+              <li><code>$eq</code>: Equal to</li>
+              <li><code>$noteq</code>: Not equal to</li>
+              <li><code>$in</code>: In a list</li>
+              <li><code>$notin</code>: Not in a list</li>
+              <li><code>$gt</code>: Greater than</li>
+              <li><code>$gte</code>: Greater than or equal to</li>
+              <li><code>$lt</code>: Less than</li>
+              <li><code>$lte</code>: Less than or equal to</li>
+              <li><code>$exists</code>: Key exists</li>
+              <li><code>$type</code>: Match against type</li>
+              <li><code>$like</code>: String pattern match (as PostgreSQL <code>LIKE</code>)</li>
+              <li><code>$regex</code>: Regex match (as PostgreSQL <code>~</code>)</li>
+            </ul>
 
+          </p>
         </div>
- 				<!-- <p><br/><a href="about.html" class="btn btn-theme">More Info</a></p> -->
 	 		</div>
-
 	 		<div class="col-lg-6">
-	 			<h4>Projects</h4>
-	 			<div class="hline"></div>
-        <p>
-          <a href="http://github.com/BedquiltDB/bedquilt-core">bedquilt-core</a> - The main PostgreSQL extension.
-          (<a href="http://bedquiltdb.readthedocs.org/en/latest">docs</a>)
-        </p>
-        <p>
-          <a href="http://github.com/BedquiltDB/pybedquilt">pybedquilt</a> - The official Python driver for BedquiltDB.
-          (<a href="http://pybedquilt.readthedocs.org/en/latest">docs</a>)
-        </p>
-        <p>
-          <a href="http://github.com/BedquiltDB/node-bedquilt">node-bedquilt</a> - The official Node.js driver for BedquiltDB.
-          (<a href="http://node-bedquilt.readthedocs.org/en/latest">docs</a>)
-        </p>
-        <p>
-          <a href="http://github.com/BedquiltDB/clj-bedquilt">clj-bedquilt</a> - The official Clojure driver for BedquiltDB.
-          (<a href="http://bedquiltdb.github.io/clj-bedquilt-docs/">docs</a>)
-        </p>
+        <pre><code class="python">articles.find({
+    'upvotes': {
+        '$gte': 4,
+        '$lt':  10
+    },
+    'authorId': 'abcd',
+    'metadata': {
+        '$exists': True
+    }
+})
 
+articles.find({
+    "title": {
+        "$regex": "^.*Elixir.*$"
+    }
+})
+
+conferences.find({
+    "city": {
+        "$notin": ["London", "Glasgow"]
+    }
+})</code></pre>
 	 		</div>
-
 	 	</div><! --/row -->
+
+    <br />
+    <br />
+
+	 	<div class="row">
+	 		<div class="col-lg-5 col-lg-offset-1">
+		 		<h3><code>sort</code> and <code>skip</code> params for <code>find_one</code></h3>
+		 		<div>
+          <p>
+            The <code>find_one</code> operation now accepts optional <code>skip</code> and <code>sort</code> parameters, just like its sister-operation, <code>find</code>.
+          </p>
+        </div>
+	 		</div>
+	 		<div class="col-lg-6">
+        <pre><code class="python">collection.find_one(
+    {"title": {"$like": "%Ruby%"}},
+    sort=[{'upvotes': -1}],
+    skip=2
+)</code></pre>
+	 		</div>
+	 	</div><! --/row -->
+
+    <br />
+    <br />
+
+	 	<div class="row">
+	 		<div class="col-lg-5 col-lg-offset-1">
+		 		<h3><code>$created</code> and <code>$updated</code> sort options</h3>
+		 		<div>
+          <p>
+            Internally, BedquiltDB keeps track of when documents are created and updated. Now, you can sort by these hidden fields.
+          </p>
+        </div>
+	 		</div>
+	 		<div class="col-lg-6">
+        <pre><code class="python"># returns documents in order of the time they were created
+collection.find({...}, sort=[{'$created': 1}])
+
+# returns documents in order of the time they were updated
+collection.find({...}, sort=[{'$updated': 1}])
+</code></pre>
+	 		</div>
+	 	</div><! --/row -->
+
+    <br />
+    <br />
+
+	 	<div class="row">
+	 		<div class="col-lg-5 col-lg-offset-1">
+		 		<h3>A new <code>remove_many_by_ids</code> operation</h3>
+		 		<div>
+          <p>
+            A glaring oversight, corrected. Enjoy bulk removal of documents via a list of <code>_id</code> values
+          </p>
+        </div>
+	 		</div>
+	 		<div class="col-lg-6">
+        <pre><code class="python">widgets.remove_many_by_ids(
+    ["5c3b9277812c6a6752b2aff7",
+     "6697e90ceb808d6161aee879",
+     "9707b283e98a456e1e1f6b85",
+     "f3d177f0be545430cb517d6f"]
+)</code></pre>
+	 		</div>
+	 	</div><! --/row -->
+
+
+
+
+
+
+
+
+
+
+
+
 	 </div><! --/container -->
 
 	<!-- *****************************************************************************************************************

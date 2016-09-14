@@ -226,6 +226,11 @@ a:focus {
 	margin: 0 auto;
 }
 
+#headerwrap a {
+  color: white;
+  text-decoration: underline;
+}
+
 /* Services Wrap */
 #service {
 	margin-top: 100px;
